@@ -11,6 +11,8 @@ public class AppleTree : MonoBehaviour
     public float leftAndRightEdge = 10f;
     public float changeDirChance = 0.1f;
     public float appleDropDelay = 1f;
+    public GameObject poinsonApplePrefab;
+    public float poisonChance = .16f;
 
     void Update() {
         Vector3 pos = transform.position;
@@ -37,7 +39,8 @@ public class AppleTree : MonoBehaviour
     }
 
     void DropApple() {
-        GameObject apple = Instantiate<GameObject>( applePrefab);
+        GameObject prefabToDrop = (Random.value<poisonChance) ? poinsonApplePrefab: applePrefab;
+        GameObject apple = Instantiate<GameObject>( prefabToDrop);
         apple.transform.position = transform.position;
         Invoke( "DropApple", appleDropDelay);
     }

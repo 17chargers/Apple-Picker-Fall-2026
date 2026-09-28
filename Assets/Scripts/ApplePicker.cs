@@ -56,6 +56,11 @@ public class ApplePicker : MonoBehaviour
             Destroy(tempGO);
         }
 
+        GameObject[] poisonArray = GameObject.FindGameObjectsWithTag("PoisonApple");
+        foreach ( GameObject tempGO in poisonArray ) {
+            Destroy(tempGO);
+        }
+
         int basketIndex = basketList.Count -1;
         GameObject basketGO = basketList[basketIndex];
         basketList.RemoveAt(basketIndex);
@@ -64,6 +69,11 @@ public class ApplePicker : MonoBehaviour
         if ( basketList.Count == 0 ) {
             EndGame(false);
         }
+    }
+
+    public void PoisonCaught(){
+        if(gameOver) return;
+        EndGame(false);
     }
 
     void Update(){

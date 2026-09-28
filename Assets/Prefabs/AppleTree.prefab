@@ -52,6 +52,8 @@ MonoBehaviour:
   leftAndRightEdge: 24
   changeDirChance: 0.02
   appleDropDelay: 0.5
+  poinsonApplePrefab: {fileID: 3115556656306806643, guid: 1229038c6c127fb4c8c47ff84692b97e, type: 3}
+  poisonChance: 0.16
 --- !u!54 &267774568
 Rigidbody:
   m_ObjectHideFlags: 0
